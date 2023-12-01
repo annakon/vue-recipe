@@ -12,7 +12,7 @@ export const useCatalogStore = defineStore('catalog', () => {
     async function requestRecipes() {
         await axios
             .get(request)
-            .then((response) => (recipes.push(...[response.data])))
+            .then((response) => (recipes.push(...response.data.hits)))
             .catch((error) => {
                 console.log(error);
                 errored.value = true;
