@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>This is favorite page</h1>
+    <h1 class="text-3xl font-bold underline">
+      This is favorite page
+    </h1>
   </div>
 </template>
 
