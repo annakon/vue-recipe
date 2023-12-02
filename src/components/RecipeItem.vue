@@ -1,7 +1,7 @@
 <template>
-        <div class="border shadow-lg">
+        <div class="border shadow-lg mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-md lg:px-8">
           <div class="overflow-hidden">
-            <img :src="props.recipe.recipe.image" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            <img :src="props.recipe.recipe.image" alt="Front of men&#039;s Basic Tee in black." class="hover:scale-125 h-full w-full object-cover object-center lg:h-full lg:w-full">
           </div>
           <div class="p-5">
              <h2 class="text-2xl truncate font-extrabold">
