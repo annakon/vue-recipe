@@ -4,7 +4,7 @@ import {RouterLink, RouterView} from 'vue-router'
 
 <template>
   <header>
-    <div class="bg-[url('src/assets/conscious-design-3D43SBDDkAc-unsplash.jpg')] bg-left bg-cover grid grid-rows-2">
+    <div class="bg-[url('src/assets/conscious-design-IMMHJRp4dcM-unsplash.jpg')] bg-left bg-cover grid">
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/favorites">Favorites</RouterLink>
