@@ -21,6 +21,22 @@ const route = useRoute()
             <label class="block text-white uppercase font-extrabold text-lg">Category</label>
             <select class="p-3 w-full rounded-lg focus:outline-none">
               <option>--Select--</option>
+              <option value="Biscuits and cookies"> Biscuits and cookies  </option>
+              <option value="Bread"> Bread  </option>
+              <option value="Cereals"> Cereals  </option>
+              <option value="Condiments and sauces"> Condiments and sauces  </option>
+              <option value="Desserts"> Desserts  </option>
+              <option value="Drinks"> Drinks  </option>
+              <option value="Main course"> Main course  </option>
+              <option value="Pancake"> Pancake  </option>
+              <option value="Preps"> Preps  </option>
+              <option value="Preserve"> Preserve  </option>
+              <option value="Salad"> Salad  </option>
+              <option value="Sandwiches"> Sandwiches  </option>
+              <option value="Side dish"> Side dish  </option>
+              <option value="Soup"> Soup  </option>
+              <option value="Starter"> Starter  </option>
+              <option value="Sweets"> Sweets  </option>
             </select>
           </div>
           <button
