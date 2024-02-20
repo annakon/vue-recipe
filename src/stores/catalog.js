@@ -6,10 +6,12 @@ export const useCatalogStore = defineStore('catalog', () => {
     const recipes = reactive([]);
     const errored = ref();
     const loading = ref(true);
-    const request = 'https://api.edamam.com/api/recipes/v2?app_id=eefcc2b9&app_key=f5e5717532db4f7737be1f1dbdb5476e&q=chicken&type=public';
+    const requestType = 'https://api.edamam.com/api/recipes/v2?app_id=eefcc2b9&app_key=f5e5717532db4f7737be1f1dbdb5476e&type=public&dishType=';
+    const requestQuery = 'https://api.edamam.com/api/recipes/v2?app_id=eefcc2b9&app_key=f5e5717532db4f7737be1f1dbdb5476e&type=public&dishType=';
     const product = ref();
 
-    async function requestRecipes() {
+    async function requestRecipes(query,type) {
+        let request=(query===''?requestType + type:requestQuery + query);
         await axios
             .get(request)
             .then((response) => (recipes.push(...response.data.hits)))

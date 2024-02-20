@@ -13,11 +13,8 @@
 
 <script setup>
 import DisplayList from '@/components/DisplayList.vue';
-import { onMounted } from 'vue';
 import {useCatalogStore} from "@/stores/catalog";
-
 const storeCatalog = useCatalogStore();
-onMounted(storeCatalog.requestRecipes);
 </script>
 
 <style scoped></style>

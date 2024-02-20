@@ -1,8 +1,3 @@
-<script setup>
-import {RouterLink, RouterView, useRoute} from 'vue-router'
-const route = useRoute()
-</script>
-
 <template>
   <header>
     <div class="bg-[url('src/assets/conscious-design-IMMHJRp4dcM-unsplash.jpg')] bg-center bg-cover grid">
@@ -15,11 +10,11 @@ const route = useRoute()
           <div class="space-y-4">
             <label class="block text-white uppercase font-extrabold text-lg">Name or ingredients</label>
             <input placeholder="Name or ingredient: eg. chicken, egg, etc.." type="text"
-                   class="p-3 w-full rounded-lg focus:outline-none"/>
+                   class="p-3 w-full rounded-lg focus:outline-none" v-model="queryStr"/>
           </div>
           <div class="space-y-4">
             <label class="block text-white uppercase font-extrabold text-lg">Category</label>
-            <select class="p-3 w-full rounded-lg focus:outline-none">
+            <select class="p-3 w-full rounded-lg focus:outline-none" v-model="typeDish">
               <option>--Select--</option>
               <option value="Biscuits and cookies"> Biscuits and cookies  </option>
               <option value="Bread"> Bread  </option>
@@ -40,7 +35,8 @@ const route = useRoute()
             </select>
           </div>
           <button
-              class="bg-orange-800 hover:bg-orange-900 cursor-pointer text-white font-extrabold w-full p-2 rounded-lg uppercase">
+              class="bg-orange-800 hover:bg-orange-900 cursor-pointer text-white font-extrabold w-full p-2 rounded-lg uppercase"
+              @click="doQuery">
             Search Recipes
           </button>
         </form>
@@ -49,6 +45,21 @@ const route = useRoute()
   </header>
   <RouterView/>
 </template>
+
+<script setup>
+function doQuery() {
+  storeCatalog.requestRecipes(queryStr,typeDish)
+}
+
+import {RouterLink, RouterView, useRoute} from 'vue-router'
+const route = useRoute()
+import {useCatalogStore} from "@/stores/catalog";
+import {ref} from "vue";
+const queryStr=ref('');
+const typeDish=ref('');
+const storeCatalog = useCatalogStore();
+
+</script>
 
 <style scoped>
 
