@@ -6,7 +6,7 @@
           <RouterLink :class='{"text-orange-500":route.name==="home"}' class="uppercase font-bold" to="/">Home</RouterLink>
           <RouterLink :class='{"text-orange-500":route.name==="favorites"}' class="uppercase font-bold" to="/favorites">Favorites</RouterLink>
         </nav>
-        <form class="md:w-1/2 2xl:w-1/3 bg-orange-400 p-10 rounded-lg space-y-6">
+        <form class="md:w-1/2 2xl:w-1/3 bg-orange-400 p-10 rounded-lg space-y-6" onsubmit="return false">
           <div class="space-y-4">
             <label class="block text-white uppercase font-extrabold text-lg">Name or ingredients</label>
             <input placeholder="Name or ingredient: eg. chicken, egg, etc.." type="text"
