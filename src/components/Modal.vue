@@ -36,7 +36,23 @@ const close= ()=> {
    background-color: white;
    padding: 64px 16px;
  }
- .modal-animation-enter-active,.modal-animation-leave-active {
 
+</style>
+
+<style lang="scss" scoped>
+ .modal-animation-enter-active,.modal-animation-leave-active {
+  transition: opacity .3s cubic-bezier(.52,0.02,.19,1.02);
+}
+ .modal-animation-enter-from {
+   opacity: 0;
+ }
+ .modal-animation-enter-to {
+   opacity: 1;
+ }
+ .modal-animation-leave-from {
+   opacity: 1;
+ }
+ .modal-animation-leave-to {
+   opacity: 0;
  }
 </style>
