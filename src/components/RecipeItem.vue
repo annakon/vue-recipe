@@ -8,6 +8,16 @@
                   {{ props.recipe.recipe.label }}
              </h2>
             <Modal2 @close="toggleModal" :open="modalActive">
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                  <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                    <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">Deactivate account</DialogTitle>
+                    <div class="mt-2">
+                      <p class="text-sm text-gray-500">Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Modal2>
              <button type="button" @click="toggleModal" class="bg-orange-400 hover:bg-orange-500 mt-5 w-full p-3 font-bold text-white text-lg">
                See Recipe
@@ -21,6 +31,7 @@ import {ref} from "vue";
 
 const props = defineProps(['recipe']);
 import Modal2 from "@/components/Modal2.vue";
+import { DialogTitle} from '@headlessui/vue'
 const modalActive=ref(false);
 const toggleModal= () => {
   modalActive.value=!modalActive.value;
