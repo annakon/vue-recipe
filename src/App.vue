@@ -43,13 +43,6 @@
       </div>
     </div>
   </header>
-  <Modal @close="toggleModal" :modal-active="modalActive">
-    <div class="modal-content">
-      <h1>This is a modal header</h1>
-      <p>This is a modal message</p>
-    </div>
-  </Modal>
-  <button type="button" @click="toggleModal">Open Modal</button>
   <RouterView/>
 </template>
 
@@ -59,17 +52,12 @@ function doQuery() {
 }
 
 import {RouterLink, RouterView, useRoute} from 'vue-router'
-import Modal from "@/components/Modal.vue";
 const route = useRoute()
 import {useCatalogStore} from "@/stores/catalog";
 import {ref} from "vue";
 const queryStr=ref('');
 const typeDish=ref('');
 const storeCatalog = useCatalogStore();
-const modalActive=ref(false);
-const toggleModal= () => {
-  modalActive.value=!modalActive.value;
-}
 </script>
 
 <style scoped>

@@ -7,7 +7,13 @@
              <h2 class="text-2xl truncate font-extrabold">
                   {{ props.recipe.recipe.label }}
              </h2>
-             <button class="bg-orange-400 hover:bg-orange-500 mt-5 w-full p-3 font-bold text-white text-lg">
+            <Modal @close="toggleModal" :modal-active="modalActive">
+              <div class="modal-content">
+                <h1>This is a modal header</h1>
+                <p>This is a modal message</p>
+              </div>
+            </Modal>
+             <button type="button" @click="toggleModal" class="bg-orange-400 hover:bg-orange-500 mt-5 w-full p-3 font-bold text-white text-lg">
                See Recipe
              </button>
           </div>
@@ -15,7 +21,14 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
+
 const props = defineProps(['recipe']);
+import Modal from "@/components/Modal.vue";
+const modalActive=ref(false);
+const toggleModal= () => {
+  modalActive.value=!modalActive.value;
+}
 </script>
 
 <style scoped>
